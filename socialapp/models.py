@@ -20,7 +20,7 @@ class Profile(models.Model):
 
 class Post(models.Model):
 
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE,related_name="posts")
 
     image = models.ImageField(upload_to='post_images/', blank=True, null=True)
 
@@ -51,3 +51,4 @@ def create_profile(sender,instance,created,**kwargs):
         Profile.objects.create(owner=instance)
 
 post_save.connect(User,create_profile)
+
