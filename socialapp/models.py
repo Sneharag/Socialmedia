@@ -17,7 +17,6 @@ class Profile(models.Model):
     profile_picture = models.ImageField(upload_to='profiles/',null=True,blank=True,default="profiles/default.png")
 
 
-
 class Post(models.Model):
 
     owner = models.ForeignKey(User, on_delete=models.CASCADE,related_name="posts")
