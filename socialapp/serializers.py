@@ -1,7 +1,7 @@
 
 from rest_framework import serializers
 
-from socialapp.models import User,Post,Comment
+from socialapp.models import User,Post,Comment,Profile
 
 class UserSerializer(serializers.ModelSerializer):
 
@@ -91,7 +91,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
 
-        model=User
+        model=Profile
 
         fields="__all__"
 
